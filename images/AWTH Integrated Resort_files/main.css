@@ -11,9 +11,12 @@ body {
 	position: sticky-top;
 }
 
-.pagelogo {
+/* .pagelogo {
 	height: 75px;
-}
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+} */
 
 .carousel-indicators li {
 	background-color: black;
