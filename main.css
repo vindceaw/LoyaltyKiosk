@@ -1,0 +1,13 @@
+body {
+	background-image: url('/images/');
+	background-size: cover;
+	padding-top: 20px;
+}
+
+.jumbotron {
+	opacity: 10%;
+	background-blend-mode: lighten;
+	padding: 20px 20px 0 0;
+	color: green;
+}
+git
