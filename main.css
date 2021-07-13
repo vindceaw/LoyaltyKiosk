@@ -1,5 +1,5 @@
 body {
-	background-image: url('/images/bgimg-nologo.png');
+	background-image: url('/images/bgblur.png');
 	background-size: cover;
 	padding-top: 20px;
 }
@@ -13,6 +13,8 @@ body {
 
 .pagelogo {
 	height: 75px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .carousel-indicators li {
