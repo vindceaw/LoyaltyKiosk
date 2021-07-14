@@ -1,6 +1,7 @@
 body {
 	background-image: url('/images/bgblur.png');
 	background-size: cover;
+	background-repeat: no-repeat;
 	padding-top: 20px;
 }
 
@@ -23,4 +24,11 @@ body {
 
 .display-4 {
 	text-align: center;
+}
+
+.btn {
+	margin: auto;
+	width: 100%;
+	padding-top: 10px;
+	display: block;
 }
