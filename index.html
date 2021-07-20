@@ -4,13 +4,19 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
     <title>AWTH Integrated Resort</title>
+
+    <script type="text/javascript">
+      function preventBack() { window.history.forward(); }
+      setTimeout("preventBack()", 0);
+      window.onunload = function () { null };
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css"
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <header>
@@ -105,7 +111,7 @@
 
             <div class="md-form mb-4">
               <i class="fas fa-lock prefix grey-text"></i>
-              <input type="password" id="defaultForm-pass" class="form-control validate">
+              <input type="password" id="defaultForm-pass" class="form-control validate" name="pass">
               <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
             </div>
 

@@ -25,27 +25,39 @@ const authMembers ={
   }
 };
 
+//disable back button
+
+// function preventBack() {
+//   window.history.forward();
+// }
 //checking the credentials of authMembers
 //const authMembersNum= Object.keys(authMembers).length;
-const emailAddEntered = document.getElementById('defaultForm-email').innerText;
-
+// console.log(emailAddEntered);
 const checkLogin = () => {
+const emailAddEntered = document.getElementById('defaultForm-email').value;
+const passwordEntered = document.getElementById('defaultForm-pass').value;
+console.log(emailAddEntered);
   for (const member in authMembers){
-    if ( emailAddEntered === authMembers[member].emailAdd){
-      
-      console.log('vindce you made it');
-      console.log(emailAddEntered)
+    if (emailAddEntered === authMembers[member].emailAdd){
+      if(passwordEntered === authMembers[member].password){
+        $('#modalLoginForm').modal('hide');
+        window.location.assign("/profile.html");
+        
+        
+      } else {
+
+      }
     } else {
       //console.log(authMembers[member].emailAdd);
       console.log('jialat liao');
       console.log(emailAddEntered);
-      document.getElementById('defaultForm-email').innerText="fuck you";
+      //after
     }
   }
 };
 //TESTING MODE
   // emailAddEntered='jasonttt@gmail.com'
   // checkLogin(emailAddEntered);
-document.getElementById('btn-ModalLogin').addEventListener('click', function (){
-  console.log(emailAddEntered);
-});
+document.getElementById('btn-ModalLogin').addEventListener('click', checkLogin);
+
+

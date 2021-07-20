@@ -10,6 +10,7 @@ body {
 	background-blend-mode: lighten;
 	padding: 20px 20px 0 0;
 	position: sticky-top;
+	margin: 0;
 }
 
 .pagelogo {
