@@ -34,24 +34,23 @@ const authMembers ={
 //const authMembersNum= Object.keys(authMembers).length;
 // console.log(emailAddEntered);
 const checkLogin = () => {
-const emailAddEntered = document.getElementById('defaultForm-email').value;
-const passwordEntered = document.getElementById('defaultForm-pass').value;
-console.log(emailAddEntered);
+  const emailAddEntered = document.getElementById('defaultForm-email').value;
+  const passwordEntered = document.getElementById('defaultForm-pass').value;
+
   for (const member in authMembers){
     if (emailAddEntered === authMembers[member].emailAdd){
       if(passwordEntered === authMembers[member].password){
         $('#modalLoginForm').modal('hide');
-        window.location.assign("/profile.html");
-        
-        
+        window.location.assign("/profile.html"); 
       } else {
-
+        // alert('Wrong Password!');
+        document.getElementById('errorMsg').innerText="Wrong Password!";
+        document.getElementById('defaultForm-email').value ="";
+        document.getElementById('defaultForm-pass').value="";
+        break;
       }
     } else {
-      //console.log(authMembers[member].emailAdd);
-      console.log('jialat liao');
-      console.log(emailAddEntered);
-      //after
+      alert('Member not found! Please create an account.')
     }
   }
 };
