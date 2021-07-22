@@ -6,8 +6,8 @@ const authMembers ={
     memberName: 'Vindce Aw Tong Howe',
     emailAdd: 'v',
     password: 'v',
-    freeGame: 1,
     earnedGame: 4,
+    earnedDrawChances: 10,
     gender: 'male',
     cardStatus: 'Premier',
     statusPts: 1500
@@ -17,8 +17,8 @@ const authMembers ={
     memberName: 'Jason Tan Tik Tok',
     emailAdd: 'jasonttt@gmail.com',
     password: 'jttt123',
-    freeGame: 1,
     earnedGame: 2,
+    earnedDrawChances: 1,
     gender: 'male',
     cardStatus: 'Premier',
     statusPts: 50
@@ -33,10 +33,11 @@ const authMembers ={
 //checking the credentials of authMembers
 //const authMembersNum= Object.keys(authMembers).length;
 // console.log(emailAddEntered);
+// Get weather
 
-const getCountryWeatherAsync = async function (country) {
+const getCountryWeatherAsync = async () => {
   try{
-  const url = `https://goweather.herokuapp.com/weather/${country}`
+  const url = `https://goweather.herokuapp.com/weather/Singapore`
   const res = await fetch(url);
   const data = await res.json();
   return data;
@@ -44,15 +45,11 @@ const getCountryWeatherAsync = async function (country) {
   console.error(err);
   } 
 };
-console.log(getCountryWeatherAsync("Singapore"));
-// getting weather info
+console.log(getCountryWeatherAsync());
+
+//Profile Modal to display information
 
 
-
-const displayMsges = () =>{
-  const editProfileMsg = getCountryWeatherAsync("Singapore");
-  document.getElementById('editProfileMsg').innerText = editProfileMsg
-}
 
 const checkLogin = () => {
   const emailAddEntered = document.getElementById('defaultForm-email').value;
@@ -63,9 +60,17 @@ const checkLogin = () => {
       if(passwordEntered === authMembers[member].password){
         $('#modalLoginForm').modal('hide');
         $('#modalProfile').modal('show');
-        // document.getElementById('profileStatus').innerText = `${authMembers[member].memberName} | ${authMembers[member].cardStatus}`;
+        // show member status
         document.getElementById('memberStatus').innerText = `${authMembers[member].memberName} | ${authMembers[member].cardStatus}`;
-        displayMsges();
+        // show weather for pool
+        getCountryWeatherAsync();
+        // show draw chances
+        document.getElementById('drawMsg').innerText=`${authMembers[member].earnedDrawChances} draw chances Activate Now!`;
+      
+        //show game play
+
+        document.getElementById('gameMsg').innerText=`${authMembers[member].earnedGame + 1} Game Play(s)`;
+
         // window.location.assign("/profile.html"); 
         // const profileStatus = document.getElementById('profileStatus');
         // profileStatus.value= authMembers[member].memberName;

@@ -41,3 +41,11 @@ h3 {
 	text-align: center;
 	margin: auto;
 }
+
+p {
+	font-size: 12px;
+}
+
+.modal-btn {
+	padding: 0;
+}
