@@ -22,12 +22,9 @@
     <header>
       <div class="jumbotron sticky-top">
         <div class="container">
-          
-            <div class="row">
-              <img class="pagelogo" src="images/logowtexth1.png" />
-            </div>
-            
-          
+          <div class="row">
+            <img class="pagelogo" src="images/logowtexth1.png" />
+          </div>
         </div>
       </div>
     </header>
@@ -70,29 +67,23 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <div class="row">
-            <div class="col-lg-2 col-xl-2"></div>
-            <div class="col-lg-4 col-xl-4">
-              <div class="btn">
-                <!-- <button class="btn bg-transparent" type="button"> -->
-                  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">
-                    <img class="img-fluid" src="images/btn-signup.png">
-                  </a>
-                  
-                <!-- </button> -->
-              </div>
-            </div>
-            <div class="col-lg-4 col-xl-4">
-              <div class="btn">
-                <!-- <button class="btn bg-transparent" type="button"> -->
-                  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><img class="img-fluid" src="images/btn-login.png"></a>
-                <!-- </button> -->
-                
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-xl-2"></div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="btn">
+            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm"><img class="img-fluid" src="images/btn-signup.png"></a>
           </div>
+        </div>
+        <div class="col-lg-4 col-xl-4">
+          <div class="btn">
+            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><img class="img-fluid" src="images/btn-login.png"></a>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- modal login -->
     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -105,13 +96,13 @@
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="defaultForm-email" class="form-control validate">
+              <input type="email" id="defaultForm-email" class="form-control validate" autocomplete="off">
               <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
             </div>
 
             <div class="md-form mb-4">
               <i class="fas fa-lock prefix grey-text"></i>
-              <input type="password" id="defaultForm-pass" class="form-control validate" name="pass">
+              <input type="password" id="defaultForm-pass" class="form-control validate" name="pass" autocomplete="off">
               <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
               <p id="errorMsg"></p>
             </div>
@@ -123,6 +114,7 @@
         </div>
       </div>
     </div>
+    <!-- modal signup -->
     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -157,6 +149,57 @@
         </div>
       </div>
     </div>
+    <!-- modal profile status -->
+    <div class="modal fade bd-example-modal-lg" id="modalProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h3 class="modal-title w-100 font-weight-bold" id="memberStatus">Profile</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="container-fluid">
+              <!-- <div class="row">
+                <h3 id="profileStatus"></h3>
+              </div> -->
+              <div class="row">
+                <div class="col-md-3 col-lg-3">
+                  <div class="modal-btn">
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-editprofil.png " ></button>
+                    <p id="editProfileMsg"></p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                  <div class="modal-btn">
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-pool.png "/></button>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                  <div class="modal-btn">
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-NDMegaDraw.png "/></button>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                  <div class="modal-btn">
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-jackpot.png"/></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-btn">
+            <button class="btn btn-default"><img class="img-fluid" src="/images/btn-jackpot.png"/></button>
+          </div>
+          <div class="modal-footer d-flex justify-content-center" id="btn-ModalLogin">
+            <button class="btn btn-default">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

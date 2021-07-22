@@ -19,6 +19,9 @@ body {
 	margin-left: auto;
 }
 
+.carousel-item {
+	margin-top: 20px;
+}
 .carousel-indicators li {
 	background-color: black;
 }
@@ -30,6 +33,11 @@ body {
 .btn {
 	margin: auto;
 	width: 100%;
-	padding-top: 10px;
+	padding-top: 5px;
 	display: block;
+}
+
+h3 {
+	text-align: center;
+	margin: auto;
 }
