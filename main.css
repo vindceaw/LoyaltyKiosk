@@ -49,3 +49,11 @@ p {
 .modal-btn {
 	padding: 0;
 }
+
+#gameTable {
+	margin-left: 35px;
+	margin-top: 35px;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}

@@ -154,7 +154,8 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header text-center">
-            <h3 class="modal-title w-100 font-weight-bold" id="memberStatus">Profile</h3>
+            <h3 class="modal-title w-100 font-weight-bold" id="memberName"></h3>
+            <h4 class="modal-title w-100 font-weight-bold" id="memberStatus"></h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -164,41 +165,46 @@
               <div class="row border-bottom" >
                 <div class="col-md-3 col-lg-3" style="padding:0">
                   <div class="modal-btn">
-                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-editprofil.png " ></button>
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-editprofile1.png " ></button>
                     <p id="editProfileMsg"></p>
                   </div>
                 </div>
                 <div class="col-md-3 col-lg-3" style="padding:0">
                   <div class="modal-btn">
-                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-pool.png "/></button>
+                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-pool1.png "/></button>
                     <p id="poolMsg"></p>
                   </div>
                 </div>
                 <div class="col-md-3 col-lg-3" style="padding:0">
                   <div class="modal-btn">
-                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-NDMegaDraw.png "/></button>
+                    <button class="btn btn-default" id="draw-btn"><img class="img-fluid" src="/images/btn-NDMegaDraw1.png"/></button>
                     <p id="drawMsg"></p>
                   </div>
                 </div>
                 <div class="col-md-3 col-lg-3" style="padding:0">
                   <div class="modal-btn">
-                    <button class="btn btn-default"><img class="img-fluid" src="/images/btn-jackpot.png"/></button>
+                    <button class="btn btn-default" id="game-btn"><img class="img-fluid" src="/images/btn-jackpot.png"/></button>
                     <p id="gameMsg"></p>
                   </div>
                 </div>
               </div>
               <div class="row">
+                <div class="col text-center">
+                  <h3 id="msgDisplay"></h3>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class ="col text-center" id="gameTable">
 
               </div>
             </div>
             
           </div>
-          <div class="modal-btn">
-            <button class="btn btn-default"><img class="img-fluid" src="/images/btn-jackpot.png"/></button>
-          </div>
-          <div class="modal-footer d-flex justify-content-center" id="btn-ModalLogin">
+          
+          <!-- <div class="modal-footer d-flex justify-content-center" id="btn-ModalLogin">
             <button class="btn btn-default">Login</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
