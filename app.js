@@ -30,23 +30,27 @@ const prizes = {
   firstPrize :{
     prizeID: [1],
     prizeInfo: "$50,000 Cash",
-    qty: 1
+    qty: 1,
+    icon: "/images/prize50000.png"
   },
 
   secondPrize :{
     prizeID: [2,3,4],
     prizeInfo: "$5,000 Cash",
-    qty: 3
+    qty: 3,
+    icon: "/images/prize5000.png"
   },
   thirdPrize :{
     prizeID: [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
     prizeInfo: "$1,000 Cash",
-    qty: 16
+    qty: 16,
+    icon: "/images/prize1000.png"
   },
   forthprize :{
     prizeID: [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],
     prizeInfo: "$100 Cash",
-    qty: 20
+    qty: 20,
+    icon: "/images/prize100.png"
   },
 }
 
@@ -134,16 +138,37 @@ document.getElementById('draw-btn').addEventListener('click',()=> {
         gamePlayBtn.setAttribute("class","gamePlayButton");
         gamePlayBtn.setAttribute("id", `gamePlayBtn_${i}${j}`)
         const gameBtnImage= document.createElement('img');
+        gameBtnImage.setAttribute("id", `gamePlayImg_${i}${j}`)
         gameBtnImage.src = '/images/Merlionicon.png';
         gameBtnImage.style.height='90px';
         gamePlayBtn.appendChild(gameBtnImage);
         td.appendChild(gamePlayBtn);
         tr.appendChild(td);
-        gamePlayBtn.addEventListener('click', prizeWon)
+        gamePlayBtn.addEventListener('click', () =>{
+          
+          // prizeWon();
+          const randomID = Math.floor((Math.random()*40)+1);
+          for (const prizeType in prizes) {
+            if(prizes[prizeType].prizeID.includes(randomID)){
+              // prizeWonIcon = prizes[prizeType].prizeInfo;
+              prizeWonIcon = prizes[prizeType].icon;
+              // console.log(prizes[prizeType].prizeInfo);
+              // console.log(randomID)
+              // console.log(prizeWonIcon);
+            }
+          }
+          document.getElementById('gameMsg').innerText="Earn More Points to get more plays";
+          document.getElementById('game-btn').disabled='true';
+          //document.getElementById(`gamePlayBtn_${i}${j}`).innerText=`You Won`;
+          const chosen = document.getElementById(`gamePlayImg_${i}${j}`);
+          chosen.src = prizeWonIcon;
+        });
         
       }
     }
     gameTbl.appendChild(tbl);
+    
+        
     
   };
 
@@ -155,17 +180,20 @@ document.getElementById('draw-btn').addEventListener('click',()=> {
     
   }
   );
+  let prizeWonIcon;
+
   const prizeWon = () => {
     const randomID = Math.floor((Math.random()*40)+1);
     for (const prizeType in prizes) {
       if(prizes[prizeType].prizeID.includes(randomID)){
-        alert(`Congratulations. You have won ${prizes[prizeType].prizeInfo}`)
-        console.log(prizes[prizeType].prizeInfo);
-        console.log(randomID)
+        prizeWonIcon = prizes[prizeType].prizeInfo
+        // console.log(prizes[prizeType].prizeInfo);
+        // console.log(randomID)
+        console.log(prizeWonIcon);
       }
     }
   };
-  
+  console.log(prizeWonIcon);
   // document.getElementByclassName('gamePlayButton').addEventListener('click',() => {
   //   prizeWon();
 //   // });
